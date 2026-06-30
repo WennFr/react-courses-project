@@ -1,0 +1,25 @@
+import type { Course } from "../types/Course"
+
+
+
+
+const CourseCard = (props: { course: Course, changeStatus: (course: Course) => void, deleteCourse: (course: Course) => void, onEdit: (course: Course) => void }) => {
+  return (
+    <div className="course-card">
+      <h3>{props.course.title}</h3>
+      <p>{props.course.category}</p>
+      <p>{props.course.level}</p>
+      <p>{props.course.status}</p>
+      <p>Hours: {props.course.completion}</p>
+      <button className="btn mark" onClick={() => props.changeStatus(props.course)}>Mark as {props.course.status === "In Progress" ? "Finished" : "In Progress"}</button>
+      <button className="btn delete" onClick={() => props.deleteCourse(props.course)}>Delete</button>
+      <button className="btn edit" onClick={() => props.onEdit(props.course)}>Edit</button>
+
+
+    </div>
+  )
+}
+
+
+
+export default CourseCard

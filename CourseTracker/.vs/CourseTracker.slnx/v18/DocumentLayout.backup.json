@@ -1,0 +1,94 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|d:\\projects\\react\\react-courses-project\\coursetracker\\coursetracker.api\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|solutionrelative:coursetracker.api\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|d:\\projects\\react\\react-courses-project\\coursetracker\\coursetracker.api\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|solutionrelative:coursetracker.api\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|d:\\projects\\react\\react-courses-project\\coursetracker\\coursetracker.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|solutionrelative:coursetracker.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|d:\\projects\\react\\react-courses-project\\coursetracker\\coursetracker.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|solutionrelative:coursetracker.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CourseDTO.cs",
+              "DocumentMoniker": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\DTOs\\CourseDTO.cs",
+              "RelativeDocumentMoniker": "CourseTracker.APi\\DTOs\\CourseDTO.cs",
+              "ToolTip": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\DTOs\\CourseDTO.cs",
+              "RelativeToolTip": "CourseTracker.APi\\DTOs\\CourseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-30T12:32:32.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "CourseTracker.APi\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\Properties\\launchSettings.json",
+              "RelativeToolTip": "CourseTracker.APi\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-30T12:23:19.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "CourseTracker.APi\\Controllers\\CoursesController.cs",
+              "ToolTip": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\Controllers\\CoursesController.cs*",
+              "RelativeToolTip": "CourseTracker.APi\\Controllers\\CoursesController.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-30T12:23:11.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\Program.cs",
+              "RelativeDocumentMoniker": "CourseTracker.APi\\Program.cs",
+              "ToolTip": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\Program.cs",
+              "RelativeToolTip": "CourseTracker.APi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-30T12:22:05.304Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
