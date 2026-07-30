@@ -8,12 +8,13 @@ namespace CourseTracker.APi.Controllers
     [ApiController]
     public class CoursesController : ControllerBase
     {
-        
+
         private static List<CourseDTO> _courses = new List<CourseDTO>()
              {
                new CourseDTO
                {
-            Title = "React for beginners",
+                   Id = 1,
+                   Title = "React for beginners",
                    Category = "React",
                    Level = "Beginner",
                    Status = "In Progress",
@@ -22,7 +23,8 @@ namespace CourseTracker.APi.Controllers
 
                  new CourseDTO
                {
-            Title = "ASP.NET Core Fundamentals",
+                   Id = 2,
+                   Title = "ASP.NET Core Fundamentals",
                    Category = ".NET",
                    Level = "Intermediate",
                    Status = "Finished",
@@ -31,7 +33,8 @@ namespace CourseTracker.APi.Controllers
 
                    new CourseDTO
                {
-            Title = "Cloud Computing with Azure",
+                   Id = 3,
+                   Title = "Cloud Computing with Azure",
                    Category = "Azure",
                    Level = "Advanced",
                    Status = "In Progress",
@@ -40,7 +43,8 @@ namespace CourseTracker.APi.Controllers
 
                      new CourseDTO
                {
-            Title = "Azure Fundamentals",
+                   Id = 4,
+                   Title = "Azure Fundamentals",
                    Category = "Azure",
                    Level = "Intermediate",
                    Status = "In Progress",
@@ -49,7 +53,7 @@ namespace CourseTracker.APi.Controllers
 
                 };
 
-    [HttpGet]
+        [HttpGet]
 
         public async Task<ActionResult<List<CourseDTO>>> GetCourses()
         {
@@ -57,9 +61,29 @@ namespace CourseTracker.APi.Controllers
         }
 
 
+        [HttpGet]
+
+        public async Task<ActionResult<CourseDTO>> GetCourse(int id )
+        {
+            var existingCourse = _courses.FirstOrDefault(c => c.Id == id);
+
+            if (existingCourse == null)
+            {
+                return BadRequest();
+            }
+
+            return Ok(existingCourse);
+        }
+
+
+
         [HttpPost]
         public async Task<ActionResult<CourseDTO>> AddCourse(CourseDTO course)
         {
+            if (course.Id == 0)
+            {
+                course.Id = _courses.Last().Id + 1;
+            }
             _courses.Add(course);
             return Ok(course);
         }
@@ -68,7 +92,7 @@ namespace CourseTracker.APi.Controllers
         [HttpPut]
         public async Task<ActionResult<CourseDTO>> UpdateCourse(CourseDTO course)
         {
-            var existingCourse = _courses.FirstOrDefault(c => c.Title == course.Title);
+            var existingCourse = _courses.FirstOrDefault(c => c.Id == course.Id);
             if (existingCourse == null)
             {
                 return NotFound();
@@ -81,15 +105,15 @@ namespace CourseTracker.APi.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult> DeleteCourse(string title)
+        public async Task<ActionResult> DeleteCourse(int id)
         {
-            var course = _courses.FirstOrDefault(c => c.Title == title);
+            var course = _courses.FirstOrDefault(c => c.Id == id);
             if (course == null)
             {
                 return NotFound();
             }
             _courses.Remove(course);
-            return Ok();
+            return Ok(course);
         }
 
     }

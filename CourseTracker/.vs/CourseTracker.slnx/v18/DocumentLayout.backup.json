@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|solutionrelative:coursetracker.api\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|d:\\projects\\react\\react-courses-project\\coursetracker\\coursetracker.api\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|solutionrelative:coursetracker.api\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|d:\\projects\\react\\react-courses-project\\coursetracker\\coursetracker.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|solutionrelative:coursetracker.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|d:\\projects\\react\\react-courses-project\\coursetracker\\coursetracker.api\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|solutionrelative:coursetracker.api\\dtos\\coursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3F01712D-719F-74E3-D5E2-BC86B91C634B}|CourseTracker.APi\\CourseTracker.APi.csproj|d:\\projects\\react\\react-courses-project\\coursetracker\\coursetracker.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +38,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CourseDTO.cs",
               "DocumentMoniker": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\DTOs\\CourseDTO.cs",
               "RelativeDocumentMoniker": "CourseTracker.APi\\DTOs\\CourseDTO.cs",
@@ -46,12 +46,11 @@
               "RelativeToolTip": "CourseTracker.APi\\DTOs\\CourseDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T12:32:32.092Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-30T12:32:32.092Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "CourseTracker.APi\\Properties\\launchSettings.json",
@@ -67,9 +66,9 @@
               "Title": "CoursesController.cs",
               "DocumentMoniker": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\Controllers\\CoursesController.cs",
               "RelativeDocumentMoniker": "CourseTracker.APi\\Controllers\\CoursesController.cs",
-              "ToolTip": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\Controllers\\CoursesController.cs*",
-              "RelativeToolTip": "CourseTracker.APi\\Controllers\\CoursesController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAASAAAAAAAAAA==",
+              "ToolTip": "D:\\Projects\\React\\react-courses-project\\CourseTracker\\CourseTracker.APi\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "CourseTracker.APi\\Controllers\\CoursesController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAQwEEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-30T12:23:11.89Z",
               "EditorCaption": ""

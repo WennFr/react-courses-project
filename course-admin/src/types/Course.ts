@@ -1,4 +1,5 @@
 export type Course = {
+    id: number,
     title?: string ,
     category?: string,
     level?: string,

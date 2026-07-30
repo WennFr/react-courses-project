@@ -1,6 +1,7 @@
 import React from 'react'
 import type { Course } from '../types/Course'
 import { useState } from 'react'
+import { editCourse } from '../api/coursesApi'
 
 const EditModal = ({ setCourses, selectedCourse, setIsModalOpen }: {
     setCourses: React.Dispatch<React.SetStateAction<Course[]>>;
@@ -21,7 +22,7 @@ const EditModal = ({ setCourses, selectedCourse, setIsModalOpen }: {
     })
 
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
 
         const newErrors = {
@@ -50,10 +51,14 @@ const EditModal = ({ setCourses, selectedCourse, setIsModalOpen }: {
             completion,
         }
 
-        setCourses((courses) => courses.map(course => course === selectedCourse ? newCourseData : course))
+        const editedCourse: Course = await editCourse(newCourseData)
+
+        setCourses((courses) => courses.map(course => course === selectedCourse ? editedCourse : course))
         resetForm()
         setIsModalOpen(false)
     }
+
+  
 
     function resetForm() {
         setTitle(selectedCourse.title ?? "")
@@ -69,8 +74,6 @@ const EditModal = ({ setCourses, selectedCourse, setIsModalOpen }: {
             status: "",
         })
     }
-
-
 
     return (
         <>
@@ -144,8 +147,6 @@ const EditModal = ({ setCourses, selectedCourse, setIsModalOpen }: {
                     </form>
                 </div>
             </div>
-
-
         </>
     )
 }

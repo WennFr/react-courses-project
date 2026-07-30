@@ -72,3 +72,4 @@ D:\Projects\React\react-courses-project\CourseTracker\CourseTracker.APi\obj\Debu
 D:\Projects\React\react-courses-project\CourseTracker\CourseTracker.APi\obj\Debug\net10.0\CourseTr.84EB5E47.Up2Date
 D:\Projects\React\react-courses-project\CourseTracker\CourseTracker.APi\obj\Debug\net10.0\CourseTracker.APi.genruntimeconfig.cache
 D:\Projects\React\react-courses-project\CourseTracker\CourseTracker.APi\obj\Debug\net10.0\ref\CourseTracker.APi.dll
+D:\Projects\React\react-courses-project\CourseTracker\CourseTracker.APi\obj\Debug\net10.0\CourseTracker.APi.sourcelink.json

@@ -1,7 +1,8 @@
 import { useState } from "react"
 import type { Course } from "../types/Course"
+import { createCourse } from "../api/coursesApi"
 
-const CreateCourseControlledInput = ({ setCourses,}: {setCourses: React.Dispatch<React.SetStateAction<Course[]>>}) => {
+const CreateCourseControlledInput = ({ setCourses, }: { setCourses: React.Dispatch<React.SetStateAction<Course[]>> }) => {
   const [title, setTitle] = useState("")
   const [category, setCategory] = useState("")
   const [level, setLevel] = useState("")
@@ -15,13 +16,9 @@ const CreateCourseControlledInput = ({ setCourses,}: {setCourses: React.Dispatch
     status: "",
   })
 
-
   console.log("create course render")
 
-
-
-
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
     const newErrors = {
@@ -43,6 +40,7 @@ const CreateCourseControlledInput = ({ setCourses,}: {setCourses: React.Dispatch
     if (hasErrors) return
 
     const newCourseData: Course = {
+      id: 0,
       title,
       category,
       level,
@@ -50,10 +48,14 @@ const CreateCourseControlledInput = ({ setCourses,}: {setCourses: React.Dispatch
       completion,
     }
 
-    setCourses((courses) => [...courses, newCourseData])
+    const createdCourse: Course = await createCourse(newCourseData)
+
+    setCourses((courses) => [...courses, createdCourse])
 
     resetForm()
   }
+
+
 
   function resetForm() {
     setTitle("")

@@ -190,3 +190,11 @@ body {
   display: flex;
   margin-top: 1.5rem;
 }
+
+
+
+nav {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
