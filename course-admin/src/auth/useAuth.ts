@@ -9,12 +9,19 @@ export function useAuth() {
   const [roles, setRoles] = useState<string[]>([])
 
   useEffect(() => {
-    if (!account) {
-      setRoles([])
-      return
+    let cancelled = false
+
+    async function loadRoles() {
+      try {
+        const nextRoles = account ? await getRoles() : []
+        if (!cancelled) setRoles(nextRoles)
+      } catch {
+        if (!cancelled) setRoles([])
+      }
     }
 
-    void getRoles().then(setRoles).catch(() => setRoles([]))
+    void loadRoles()
+    return () => { cancelled = true }
   }, [account])
 
   async function login() {
