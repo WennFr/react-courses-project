@@ -2,8 +2,11 @@ import type { Course } from '../types/Course';
 import CourseCard from './CourseCard';
 import { useState } from 'react';
 import { deleteCourse } from '../api/coursesApi';
+import { editCourse } from '../api/coursesApi'
+import { useAuth } from '../auth/useAuth';
 
 function CourseList({ courses, setCourses, onEdit }: { courses: Course[], setCourses: React.Dispatch<React.SetStateAction<Course[]>>, onEdit: (course: Course) => void }) {
+  const { isTeacher } = useAuth();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedStatus, setSelectedStatus] = useState('All');
 
@@ -18,7 +21,7 @@ function CourseList({ courses, setCourses, onEdit }: { courses: Course[], setCou
 
   console.log("course list render")
 
-  function changeStatus(course: Course) {
+  async function changeStatus(course: Course) {
 
     if (course.status === "In Progress")
       course.status = "Finished"
@@ -26,8 +29,11 @@ function CourseList({ courses, setCourses, onEdit }: { courses: Course[], setCou
       course.status = "In Progress"
     }
 
-    setCourses((prevCourses) => prevCourses.map((c) => (c === course ? course : c)));
+    const updatedCourse: Course = await editCourse(course);
+
+    setCourses((prevCourses) => prevCourses.map((c) => (c.id === updatedCourse.id ? updatedCourse : c)));
   }
+
   async function removeCourse(course: Course) {
     const content: Course = await deleteCourse(course);
     if (content) {
@@ -59,7 +65,7 @@ function CourseList({ courses, setCourses, onEdit }: { courses: Course[], setCou
       </select>
 
       {coursesToShow.map((course) => (
-        <CourseCard key={course.id} course={course} changeStatus={changeStatus} removeCourse={removeCourse} onEdit={onEdit} />
+        <CourseCard key={course.id} course={course} changeStatus={changeStatus} removeCourse={removeCourse} onEdit={onEdit} isTeacher={isTeacher} />
       ))}
 
       {coursesToShow.length === 0 ? (<p>No courses matching filtering.</p>) : null}

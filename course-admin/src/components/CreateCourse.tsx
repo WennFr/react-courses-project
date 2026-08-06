@@ -6,6 +6,7 @@ const CreateCourse = ({setCourses} : {setCourses: React.Dispatch<React.SetStateA
     function create(formData: FormData) {
 
         const newCourseData: Course = {
+            id: 0,
             title: formData.get('title')?.toString(),
             category: formData.get('category')?.toString(),
             level: formData.get('level')?.toString(),

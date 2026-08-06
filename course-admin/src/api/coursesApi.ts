@@ -1,8 +1,16 @@
 import type { Course } from "../types/Course";
+import { getApiAccessToken } from '../auth/apiToken';
+
+async function authorizedFetch(input: RequestInfo | URL, init: RequestInit = {}) {
+  const accessToken = await getApiAccessToken();
+  const headers = new Headers(init.headers);
+  headers.set('Authorization', `Bearer ${accessToken}`);
+  return fetch(input, { ...init, headers });
+}
 
 export async function getCourses() {
       try {
-        const response = await fetch("/api/courses");
+        const response = await authorizedFetch("/api/courses");
         console.log("response", response)
         const fetchedCourses = await response.json();
         console.log("fetched courses")
@@ -14,10 +22,25 @@ export async function getCourses() {
       }
     }
 
+
+export async function getCourse(id: number) {
+      try {
+        const response = await authorizedFetch(`/api/courses/${id}`);
+        console.log("response", response)
+        const fetchedCourse = await response.json();
+        console.log("fetched course", fetchedCourse)
+        return fetchedCourse;
+      }
+      catch (error) {
+        console.error("Error fetching course:", error);
+        throw error;
+      }
+    }
+
  export async function createCourse(course: Course) {
 
     try {
-      const response = await fetch("/api/courses", {
+      const response = await authorizedFetch("/api/courses", {
         method: "POST",
         headers: { "Accept": "application/json", "Content-Type": "application/json" },
         body: JSON.stringify(course)
@@ -40,7 +63,7 @@ export async function getCourses() {
   export async function editCourse(course: Course) {
 
     try {
-      const response = await fetch("/api/courses", {
+      const response = await authorizedFetch("/api/courses", {
         method: "PUT",
         headers: { "Accept": "application/json", "Content-Type": "application/json" },
         body: JSON.stringify(course)
@@ -62,7 +85,7 @@ export async function getCourses() {
 
   export async function deleteCourse(course: Course) {
       try {
-        const response = await fetch(`/api/courses/${course.id}`, {
+        const response = await authorizedFetch(`/api/courses/${course.id}`, {
           method: "DELETE",
         });
 

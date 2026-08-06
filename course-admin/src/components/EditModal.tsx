@@ -44,6 +44,7 @@ const EditModal = ({ setCourses, selectedCourse, setIsModalOpen }: {
         if (hasErrors) return
 
         const newCourseData: Course = {
+            id: selectedCourse.id,
             title,
             category,
             level,
@@ -51,9 +52,11 @@ const EditModal = ({ setCourses, selectedCourse, setIsModalOpen }: {
             completion,
         }
 
+        console.log(newCourseData)
+
         const editedCourse: Course = await editCourse(newCourseData)
 
-        setCourses((courses) => courses.map(course => course === selectedCourse ? editedCourse : course))
+        setCourses((courses) => courses.map(course => course.id ===  editedCourse .id ? editedCourse : course))
         resetForm()
         setIsModalOpen(false)
     }

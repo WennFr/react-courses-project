@@ -1,73 +1,39 @@
-# React + TypeScript + Vite
+# Course Admin – Entra ID RBAC demonstration
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The application uses Entra ID for sign-in and demonstrates role-based access control (RBAC): all signed-in users can read courses, while only the `Teacher` app role can create, edit, change status, or delete them.
 
-Currently, two official plugins are available:
+The UI hides teacher controls for students, but this is not the security boundary. The ASP.NET API verifies the Entra access token and requires `Teacher` for every write endpoint.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Entra setup
 
-## React Compiler
+The tenant's sign-in address (`frederick.entra@outlook.com`) is not an identifier that can be used in application configuration. In the Entra admin center, copy the **Directory (tenant) ID** and complete the following.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Register an API application, for example `course-tracker-api`.
+2. In **Expose an API**, set an Application ID URI (the default `api://<API client ID>` is fine) and create the delegated scope `access_as_user`.
+3. In **App roles**, create these roles. Set **Allowed member types** to `Users/Groups`:
+   - Display name `Teacher`, value `Teacher`
+   - Display name `Student`, value `Student`
+4. In **Enterprise applications** for the API, assign the `Teacher` or `Student` role to each demo user/group.
+5. Register a second application as a **Single-page application**. Add `http://localhost:5173` as a redirect URI.
+6. In the SPA app's **API permissions**, add the API's `access_as_user` delegated permission and grant consent if your tenant requires it.
 
-## Expanding the ESLint configuration
+## Local configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Copy `.env.example` to `.env.local` and replace every value. In `CourseTracker.APi/appsettings.Development.json`, add the same tenant ID and the **API app** client ID:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```json
+{
+  "EntraId": {
+    "TenantId": "your-directory-tenant-id",
+    "ClientId": "your-api-app-client-id"
+  }
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+`appsettings.Development.json` is ignored by Git, so IDs can remain local. Do not put secrets in the SPA; this implementation uses the authorization-code flow with PKCE and needs no client secret.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Run
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Start the API from `CourseTracker/CourseTracker.APi` with `dotnet run`, then start the frontend from `course-admin` with `npm run dev`. Sign in through the button in the navigation bar.
+
+For the clearest classroom demo, sign in first as a user assigned `Student`, then as a user assigned `Teacher`. A direct POST/PUT/DELETE request with a student's token receives `403 Forbidden`, even if the frontend is modified.
