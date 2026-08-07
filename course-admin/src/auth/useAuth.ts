@@ -27,6 +27,9 @@ export function useAuth() {
   async function login() {
     ensureEntraConfiguration()
     const result = await instance.loginPopup({ scopes: [apiScope] })
+
+    console.log("ID Token:", result.idToken);
+
     instance.setActiveAccount(result.account)
   }
 
