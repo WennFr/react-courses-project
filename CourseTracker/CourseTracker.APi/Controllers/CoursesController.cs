@@ -121,5 +121,12 @@ namespace CourseTracker.APi.Controllers
             return Ok(course);
         }
 
+        [HttpGet("whoami")]
+        [Authorize]
+        public IActionResult WhoAmI()
+        {
+            return Ok(User.Claims.Select(c => new { c.Type, c.Value }));
+        }
+
     }
 }

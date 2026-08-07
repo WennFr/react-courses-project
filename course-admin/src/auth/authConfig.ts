@@ -8,7 +8,7 @@ export const msalConfig: Configuration = {
   auth: {
     clientId: import.meta.env.VITE_ENTRA_CLIENT_ID ?? '00000000-0000-0000-0000-000000000000',
     authority: `https://login.microsoftonline.com/${tenantId}`,
-    redirectUri: window.location.origin,
+    redirectUri: `${window.location.origin}/redirect.html`,
     postLogoutRedirectUri: window.location.origin,
   },
   cache: {

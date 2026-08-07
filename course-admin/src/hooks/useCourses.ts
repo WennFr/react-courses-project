@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { CoursesData } from '../data/CoursesData';
 import { getCourses } from '../api/coursesApi';
+import type { Course } from '../types/Course';
 
 export function useCourses() {
-  const [courses, setCourses] = useState(CoursesData);
+  const [courses, setCourses] = useState<Course[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
 useEffect(() => {

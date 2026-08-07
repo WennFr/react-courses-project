@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CourseTracker.APi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e349fa69669ed43bffeaf7b373df0f0a8c1134fe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48571bdad36c173ae0c9ba7c3e9f2920c80bcbbd")]
 [assembly: System.Reflection.AssemblyProductAttribute("CourseTracker.APi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CourseTracker.APi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

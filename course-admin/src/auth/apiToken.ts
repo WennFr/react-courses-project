@@ -17,6 +17,7 @@ export async function getApiAccessToken() {
   if (!account) throw new Error('Sign in before calling the API.')
 
   const result = await msalInstance.acquireTokenSilent({ account, scopes: [apiScope] })
+  console.log('Access token acquired:', result.accessToken)
   return result.accessToken
 }
 
